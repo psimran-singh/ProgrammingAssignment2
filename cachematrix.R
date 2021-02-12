@@ -19,10 +19,6 @@ makeCacheMatrix <- function(x = matrix()) {
        getinverse = getinverse)
 }
 
-example_matrix <- rbind(c(1, -1/4), c(-1/4, 1))
-
-makeCacheMatrix(example_matrix)
-
 ## cacheSolve: This function computes the inverse of the special "matrix" 
 ## returned by makeCacheMatrix above. If the inverse has already been 
 ## calculated (and the matrix has not changed), then the cacheSolve should 
@@ -40,4 +36,13 @@ cacheSolve <- function(x, ...) {
   m
 }
 
-cacheSolve(example_matrix)
+## Example test.....let's see if it all works
+
+example0 <- rbind(c(1, -1/4), c(-1/4, 1))
+
+example1 <- makeCacheMatrix(example0)
+
+cacheSolve(example1)
+example0
+
+## Not bad! Thank you for looking at my code!
